@@ -1,23 +1,23 @@
 const defaultParserOptions = {
-  ecmaVersion: 6,
-  ecmaFeatures: {
-    jsx: true,
-  }
+    ecmaVersion: 6,
+    ecmaFeatures: {
+        jsx: true,
+    }
 };
 
-module.exports = function({
-  code,
-  errors,
-  options = [],
-  parserOptions = {},
-}) {
-  return {
+module.exports = function ({
     code,
     errors,
-    options,
-    parserOptions: {
-      ...defaultParserOptions,
-      ...parserOptions,
-    }
-  };
+    options = [],
+    parserOptions = {},
+}) {
+    return {
+        code,
+        errors,
+        options,
+        parserOptions: {
+            ...defaultParserOptions,
+            ...parserOptions,
+        }
+    };
 }
