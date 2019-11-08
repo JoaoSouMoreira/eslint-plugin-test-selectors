@@ -128,6 +128,21 @@ Only supported on `button` rule, this option will exempt React components called
 }
 ```
 
+## Custom settings
+There are a few settings that you can set
+
+### ignoreFileName
+By default all files will be checked for the rules. However, you can specify a filename as a string to tell ESLint to not check the rules against.
+```json
+{
+    "settings": {
+        "test-selectors": {
+            "ignoreFileName": "index.jsx"
+        }
+    }
+}
+```
+
 ## Supported Rules
 
 * `test-selectors/anchor`
