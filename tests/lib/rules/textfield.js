@@ -21,6 +21,7 @@ ruleTester.run('textfield', rule, {
         { code: `<TextField inputProps={{ 'data-test-id': 'foo' }} />` },
         { code: `<TextField disabled />` },
         { code: `<TextField readonly />` },
+        { code: `<div></div>` },
     ].map(parserOptionsMapper),
 
     invalid: [

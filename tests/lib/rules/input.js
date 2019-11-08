@@ -22,6 +22,7 @@ ruleTester.run('input', rule, {
         { code: `<input data-test-id='foo' />` },
         { code: `<input disabled />` },
         { code: `<input readonly />` },
+        { code: `<div></div>` },
     ].map(parserOptionsMapper),
 
     invalid: [

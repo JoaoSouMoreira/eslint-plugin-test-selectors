@@ -27,7 +27,8 @@ ruleTester.run('button', rule, {
         { code: `<DownloadButton data-test-id='foo' />` },
         { code: `<button disabled />` },
         { code: `<button readonly />` },
-        { code: `<Button data-test-id='foo'>Foo</Button>`, options: ["warn", { htmlOnly: true }] }
+        { code: `<Button data-test-id='foo'>Foo</Button>`, options: ["warn", { htmlOnly: true }] },
+        { code: `<div></div>` },
     ].map(parserOptionsMapper),
 
     invalid: [

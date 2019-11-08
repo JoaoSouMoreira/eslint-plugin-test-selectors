@@ -21,6 +21,7 @@ ruleTester.run('checkbox', rule, {
         { code: `<Radio inputProps={{ 'data-test-id': 'foo' }} />` },
         { code: `<Radio disabled />` },
         { code: `<Radio readonly />` },
+        { code: `<div></div>` },
     ].map(parserOptionsMapper),
 
     invalid: [

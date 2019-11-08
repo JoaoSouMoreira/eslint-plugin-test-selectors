@@ -25,7 +25,8 @@ ruleTester.run('anchor', rule, {
         { code: `<Foo href="bar" data-test-id={ bar } />` },
         { code: `<Foo href="bar" data-test-id={ bar }>Bar</Foo>` },
         { code: `<Foo href="bar" disabled>Bar</Foo>` },
-        { code: `<Foo href="bar" readonly>Bar</Foo>` }
+        { code: `<Foo href="bar" readonly>Bar</Foo>` },
+        { code: `<div></div>` },
     ].map(parserOptionsMapper),
 
     invalid: [

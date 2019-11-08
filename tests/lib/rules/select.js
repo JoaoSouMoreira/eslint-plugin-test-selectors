@@ -21,6 +21,7 @@ ruleTester.run('select', rule, {
         { code: `<Select inputProps={{ 'data-test-id': 'foo' }} />` },
         { code: `<Select disabled />` },
         { code: `<Select readonly />` },
+        { code: `<div></div>` },
     ].map(parserOptionsMapper),
 
     invalid: [
