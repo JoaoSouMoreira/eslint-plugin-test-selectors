@@ -1,5 +1,5 @@
 # eslint-plugin-test-selectors
-[![Build Status](https://travis-ci.org/davidcalhoun/eslint-plugin-test-selectors.svg?branch=master)](https://travis-ci.org/davidcalhoun/eslint-plugin-test-selectors)
+[![Build Status](https://travis-ci.org/JoaoSouMoreira/eslint-plugin-test-selectors.svg?branch=master)](https://travis-ci.org/JoaoSouMoreira/eslint-plugin-test-selectors)
 [![Downloads][downloads-image]][npm-url]
 
 Enforces that a `data-test-id` attribute is present on interactive DOM elements to help with UI testing.
@@ -8,7 +8,7 @@ Enforces that a `data-test-id` attribute is present on interactive DOM elements 
 * ✅ `<button data-test-id="download-button">Download</button>`
 
 ### Example of eslint-plugin-test-selectors running in Visual Studio Code:
-![Example of eslint-plugin-test-selectors running in Visual Studio Code](https://github.com/davidcalhoun/eslint-plugin-test-selectors/blob/master/vscode-test-selectors-example.png)
+![Example of eslint-plugin-test-selectors running in Visual Studio Code](https://github.com/JoaoSouMoreira/eslint-plugin-test-selectors/blob/master/vscode-test-selectors-example.png)
 
 ## Changelog
 * `1.1.0`
@@ -167,7 +167,7 @@ Why `data` attributes and not `id` or `class`?  Check out some of the following:
 [downloads-image]: https://img.shields.io/npm/dm/eslint-plugin-test-selectors.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/eslint-plugin-test-selectors
 [npm-image]: https://img.shields.io/npm/dm/eslint-plugin-test-selectors.svg?style=flat
-[i1]: https://github.com/davidcalhoun/eslint-plugin-test-selectors/issues/1
-[i2]: https://github.com/davidcalhoun/eslint-plugin-test-selectors/issues/2
-[i3]: https://github.com/davidcalhoun/eslint-plugin-test-selectors/issues/3
-[i4]: https://github.com/davidcalhoun/eslint-plugin-test-selectors/issues/4
+[i1]: https://github.com/JoaoSouMoreira/eslint-plugin-test-selectors/issues/1
+[i2]: https://github.com/JoaoSouMoreira/eslint-plugin-test-selectors/issues/2
+[i3]: https://github.com/JoaoSouMoreira/eslint-plugin-test-selectors/issues/3
+[i4]: https://github.com/JoaoSouMoreira/eslint-plugin-test-selectors/issues/4
