@@ -1,5 +1,5 @@
-# eslint-plugin-test-selectors
-[![Build Status](https://travis-ci.org/JoaoSouMoreira/eslint-plugin-test-selectors.svg?branch=master)](https://travis-ci.org/JoaoSouMoreira/eslint-plugin-test-selectors)
+# @funeralguide/eslint-plugin-test-selectors
+[![Build Status](https://travis-ci.org/JoaoSouMoreira/@funeralguide/eslint-plugin-test-selectors.svg?branch=master)](https://travis-ci.org/JoaoSouMoreira/@funeralguide/test-selectors)
 [![Downloads][downloads-image]][npm-url]
 
 Enforces that a `data-test-id` attribute is present on interactive DOM elements to help with UI testing.
@@ -7,8 +7,8 @@ Enforces that a `data-test-id` attribute is present on interactive DOM elements 
 * ❌ `<button>Download</button>`
 * ✅ `<button data-test-id="download-button">Download</button>`
 
-### Example of eslint-plugin-test-selectors running in Visual Studio Code:
-![Example of eslint-plugin-test-selectors running in Visual Studio Code](https://github.com/JoaoSouMoreira/eslint-plugin-test-selectors/blob/master/vscode-test-selectors-example.png)
+### Example of @funeralguide/eslint-plugin-test-selectors running in Visual Studio Code:
+![Example of @funeralguide/eslint-plugin-test-selectors running in Visual Studio Code](https://github.com/JoaoSouMoreira/@funeralguide/test-selectors/blob/master/vscode-test-selectors-example.png)
 
 ## Changelog
 * `1.0.0` - initial release
@@ -31,12 +31,12 @@ $ npm install @funeralguide/eslint-plugin-test-selectors --save-dev
 
 ## Usage
 
-Add `@funeralguide/eslint-plugin-test-selectors` to the plugins section of your `.eslintrc` configuration fil:
+Add `@funeralguide/test-selectors` to the plugins section of your `.eslintrc` configuration fil:
 
 ```json
 {
     "plugins": [
-        "@funeralguide/eslint-plugin-test-selectors"
+        "@funeralguide/test-selectors"
     ]
 }
 ```
@@ -46,19 +46,19 @@ If you want to use all the recommended default rules, you can simply add this li
 ```json
 {
     "extends": [
-        "plugin:@funeralguide/eslint-plugin-test-selectors/recommended"
+        "plugin:@funeralguide/test-selectors/recommended"
     ]
 }
 ```
 
-By default, this will run all [Supported Rules](#supported-rules) and emit eslint warnings.  If you want to be more strict, you can emit eslint errors by instead using `plugin:@funeralguide/eslint-plugin-test-selectors/recommendedWithErrors`.
+By default, this will run all [Supported Rules](#supported-rules) and emit eslint warnings.  If you want to be more strict, you can emit eslint errors by instead using `plugin:@funeralguide/test-selectors/recommendedWithErrors`.
 
-Another option: you can also selectively enable and disable individual rules in the `rules` section of your `.eslintrc` configuration.  For instance, if you only want to enable the `@funeralguide/eslint-plugin-test-selectors/button` rule, skip the `extends` addition above and simply add the following to the `rules` section of your `.eslintrc` configuration:
+Another option: you can also selectively enable and disable individual rules in the `rules` section of your `.eslintrc` configuration.  For instance, if you only want to enable the `@funeralguide/test-selectors/button` rule, skip the `extends` addition above and simply add the following to the `rules` section of your `.eslintrc` configuration:
 
 ```json
 {
     "rules": {
-        "@funeralguide/eslint-plugin-test-selectors/button": ["warn", "always"]
+        "@funeralguide/test-selectors/button": ["warn", "always"]
     }
 }
 ```
@@ -68,7 +68,7 @@ If you like most of the recommended rules by adding the `extends` option above, 
 ```json
 {
     "rules": {
-        "@funeralguide/eslint-plugin-test-selectors/anchor": "off"
+        "@funeralguide/test-selectors/anchor": "off"
     }
 }
 ```
@@ -85,7 +85,7 @@ The default test attribute expected is `data-test-id`, but you can override it w
 ```json
 {
     "rules": {
-        "@funeralguide/eslint-plugin-test-selectors/onChange": ["warn", "always", { "testAttribute": "data-some-custom-attribute" }]
+        "@funeralguide/test-selectors/onChange": ["warn", "always", { "testAttribute": "data-some-custom-attribute" }]
     }
 }
 ```
@@ -96,7 +96,7 @@ By default all elements with the `disabled` attribute are ignored, e.g. `<input 
 ```json
 {
     "rules": {
-        "@funeralguide/eslint-plugin-test-selectors/onChange": ["warn", "always", { "ignoreDisabled": false }]
+        "@funeralguide/test-selectors/onChange": ["warn", "always", { "ignoreDisabled": false }]
     }
 }
 ```
@@ -107,7 +107,7 @@ By default all elements with the `readonly` attribute are ignored, e.g. `<input 
 ```json
 {
     "rules": {
-        "@funeralguide/eslint-plugin-test-selectors/onChange": ["warn", "always", { "ignoreReadonly": false }]
+        "@funeralguide/test-selectors/onChange": ["warn", "always", { "ignoreReadonly": false }]
     }
 }
 ```
@@ -118,7 +118,7 @@ Only supported on `button` rule, this option will exempt React components called
 ```json
 {
     "rules": {
-        "@funeralguide/eslint-plugin-test-selectors/button": ["warn", "always", {"htmlOnly": true}]
+        "@funeralguide/test-selectors/button": ["warn", "always", {"htmlOnly": true}]
     }
 }
 ```
@@ -131,7 +131,7 @@ By default all files will be checked for the rules. However, you can specify a f
 ```json
 {
     "settings": {
-        "@funeralguide/eslint-plugin-test-selectors": {
+        "@funeralguide/test-selectors": {
             "ignoreFileName": "index.jsx"
         }
     }
@@ -140,13 +140,13 @@ By default all files will be checked for the rules. However, you can specify a f
 
 ## Supported Rules
 
-* `@funeralguide/eslint-plugin-test-selectors/anchor`
-* `@funeralguide/eslint-plugin-test-selectors/button`
-* `@funeralguide/eslint-plugin-test-selectors/input`
-* `@funeralguide/eslint-plugin-test-selectors/onChange`
-* `@funeralguide/eslint-plugin-test-selectors/onClick`
-* `@funeralguide/eslint-plugin-test-selectors/onKeyDown`
-* `@funeralguide/eslint-plugin-test-selectors/onKeyUp`
+* `@funeralguide/test-selectors/anchor`
+* `@funeralguide/test-selectors/button`
+* `@funeralguide/test-selectors/input`
+* `@funeralguide/test-selectors/onChange`
+* `@funeralguide/test-selectors/onClick`
+* `@funeralguide/test-selectors/onKeyDown`
+* `@funeralguide/test-selectors/onKeyUp`
 
 ## Further Reading
 
