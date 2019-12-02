@@ -11,11 +11,6 @@ Enforces that a `data-test-id` attribute is present on interactive DOM elements 
 ![Example of eslint-plugin-test-selectors running in Visual Studio Code](https://github.com/JoaoSouMoreira/eslint-plugin-test-selectors/blob/master/vscode-test-selectors-example.png)
 
 ## Changelog
-* `1.1.0`
-  * elements with `disabled` and `readonly` attributes are now ignored by default.  See [Custom Rules Options](#custom-rule-options) to customize this behavior. (fixes [#3][i3])
-  * `plugin:test-selectors/recommended` now emits warnings by default instead of errors. For the old stricter behavior which emits errors, folks can use `plugin:test-selectors/recommendedWithErrors` (fixes [#4][i4])
-  * Refactoring and cleanup.  Readme improvements.
-* `1.0.1` - fix bug with inline functions (fixes [#1][i1])
 * `1.0.0` - initial release
 
 ## Installation
@@ -26,22 +21,22 @@ You'll first need to install [ESLint](http://eslint.org):
 $ npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-test-selectors`:
+Next, install `@funeralguide/eslint-plugin-test-selectors`:
 
 ```
-$ npm install eslint-plugin-test-selectors --save-dev
+$ npm install @funeralguide/eslint-plugin-test-selectors --save-dev
 ```
 
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-test-selectors` globally.
+**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `@funeralguide/eslint-plugin-test-selectors` globally.
 
 ## Usage
 
-Add `test-selectors` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `@funeralguide/eslint-plugin-test-selectors` to the plugins section of your `.eslintrc` configuration fil:
 
 ```json
 {
     "plugins": [
-        "test-selectors"
+        "@funeralguide/eslint-plugin-test-selectors"
     ]
 }
 ```
@@ -51,19 +46,19 @@ If you want to use all the recommended default rules, you can simply add this li
 ```json
 {
     "extends": [
-        "plugin:test-selectors/recommended"
+        "plugin:@funeralguide/eslint-plugin-test-selectors/recommended"
     ]
 }
 ```
 
-By default, this will run all [Supported Rules](#supported-rules) and emit eslint warnings.  If you want to be more strict, you can emit eslint errors by instead using `plugin:test-selectors/recommendedWithErrors`.
+By default, this will run all [Supported Rules](#supported-rules) and emit eslint warnings.  If you want to be more strict, you can emit eslint errors by instead using `plugin:@funeralguide/eslint-plugin-test-selectors/recommendedWithErrors`.
 
-Another option: you can also selectively enable and disable individual rules in the `rules` section of your `.eslintrc` configuration.  For instance, if you only want to enable the `test-selectors/button` rule, skip the `extends` addition above and simply add the following to the `rules` section of your `.eslintrc` configuration:
+Another option: you can also selectively enable and disable individual rules in the `rules` section of your `.eslintrc` configuration.  For instance, if you only want to enable the `@funeralguide/eslint-plugin-test-selectors/button` rule, skip the `extends` addition above and simply add the following to the `rules` section of your `.eslintrc` configuration:
 
 ```json
 {
     "rules": {
-        "test-selectors/button": ["warn", "always"]
+        "@funeralguide/eslint-plugin-test-selectors/button": ["warn", "always"]
     }
 }
 ```
@@ -73,7 +68,7 @@ If you like most of the recommended rules by adding the `extends` option above, 
 ```json
 {
     "rules": {
-        "test-selectors/anchor": "off"
+        "@funeralguide/eslint-plugin-test-selectors/anchor": "off"
     }
 }
 ```
@@ -90,7 +85,7 @@ The default test attribute expected is `data-test-id`, but you can override it w
 ```json
 {
     "rules": {
-        "test-selectors/onChange": ["warn", "always", { "testAttribute": "data-some-custom-attribute" }]
+        "@funeralguide/eslint-plugin-test-selectors/onChange": ["warn", "always", { "testAttribute": "data-some-custom-attribute" }]
     }
 }
 ```
@@ -101,7 +96,7 @@ By default all elements with the `disabled` attribute are ignored, e.g. `<input 
 ```json
 {
     "rules": {
-        "test-selectors/onChange": ["warn", "always", { "ignoreDisabled": false }]
+        "@funeralguide/eslint-plugin-test-selectors/onChange": ["warn", "always", { "ignoreDisabled": false }]
     }
 }
 ```
@@ -112,7 +107,7 @@ By default all elements with the `readonly` attribute are ignored, e.g. `<input 
 ```json
 {
     "rules": {
-        "test-selectors/onChange": ["warn", "always", { "ignoreReadonly": false }]
+        "@funeralguide/eslint-plugin-test-selectors/onChange": ["warn", "always", { "ignoreReadonly": false }]
     }
 }
 ```
@@ -123,7 +118,7 @@ Only supported on `button` rule, this option will exempt React components called
 ```json
 {
     "rules": {
-        "test-selectors/button": ["warn", "always", {"htmlOnly": true}]
+        "@funeralguide/eslint-plugin-test-selectors/button": ["warn", "always", {"htmlOnly": true}]
     }
 }
 ```
@@ -136,7 +131,7 @@ By default all files will be checked for the rules. However, you can specify a f
 ```json
 {
     "settings": {
-        "test-selectors": {
+        "@funeralguide/eslint-plugin-test-selectors": {
             "ignoreFileName": "index.jsx"
         }
     }
@@ -145,13 +140,13 @@ By default all files will be checked for the rules. However, you can specify a f
 
 ## Supported Rules
 
-* `test-selectors/anchor`
-* `test-selectors/button`
-* `test-selectors/input`
-* `test-selectors/onChange`
-* `test-selectors/onClick`
-* `test-selectors/onKeyDown`
-* `test-selectors/onKeyUp`
+* `@funeralguide/eslint-plugin-test-selectors/anchor`
+* `@funeralguide/eslint-plugin-test-selectors/button`
+* `@funeralguide/eslint-plugin-test-selectors/input`
+* `@funeralguide/eslint-plugin-test-selectors/onChange`
+* `@funeralguide/eslint-plugin-test-selectors/onClick`
+* `@funeralguide/eslint-plugin-test-selectors/onKeyDown`
+* `@funeralguide/eslint-plugin-test-selectors/onKeyUp`
 
 ## Further Reading
 
@@ -162,12 +157,3 @@ Why `data` attributes and not `id` or `class`?  Check out some of the following:
 * [Decoupling CSS Selectors From Your Tests](https://mixandgo.com/learn/decoupling-css-selectors-from-your-tests)
 * [Test your DOM with Data Attributes](https://medium.com/@colecodes/test-your-dom-with-data-attributes-44fccc43ed4b)
 * [Something Better than IDs for Identifying Elements in Selenium Tests](https://techblog.constantcontact.com/software-development/a-better-way-to-id-elements-in-selenium-tests/)
-
-
-[downloads-image]: https://img.shields.io/npm/dm/eslint-plugin-test-selectors.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/eslint-plugin-test-selectors
-[npm-image]: https://img.shields.io/npm/dm/eslint-plugin-test-selectors.svg?style=flat
-[i1]: https://github.com/JoaoSouMoreira/eslint-plugin-test-selectors/issues/1
-[i2]: https://github.com/JoaoSouMoreira/eslint-plugin-test-selectors/issues/2
-[i3]: https://github.com/JoaoSouMoreira/eslint-plugin-test-selectors/issues/3
-[i4]: https://github.com/JoaoSouMoreira/eslint-plugin-test-selectors/issues/4
