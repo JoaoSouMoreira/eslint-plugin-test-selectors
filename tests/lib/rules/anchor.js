@@ -20,6 +20,7 @@ ruleTester.run('anchor', rule, {
         { code: `<a data-test-id={ bar }>Foo</a>` },
         { code: `<a data-test-id='foo'>Foo</a>` },
         { code: `<a data-test-id='foo' />` },
+        { code: `<a href='foo' />` },
         { code: `<Foo href="bar" data-test-id='bar' />` },
         { code: `<Foo href="bar" data-test-id='bar'>Bar</Foo>` },
         { code: `<Foo href="bar" data-test-id={ bar } />` },
@@ -35,8 +36,5 @@ ruleTester.run('anchor', rule, {
         { code: '<a data-test-id>Foo</a>', errors: [anchorError] },
         { code: '<a>Foo</a>', errors: [anchorError] },
         { code: '<a />', errors: [anchorError] },
-        { code: '<Foo href="bar" />', errors: [anchorError] },
-        { code: '<Foo href="bar" disabled={ bar } />', errors: [anchorError] },
-        { code: '<Foo href="bar" readonly={ bar } />', errors: [anchorError] }
     ].map(parserOptionsMapper)
 });
